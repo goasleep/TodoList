@@ -1,8 +1,8 @@
 <template>
   <div id="listItem">
     <p>
-      <input type="checkbox" class="checkbox" />
-      {{message}}
+      <input type="checkbox" class="checkbox" v-on="handleCheck"/>
+      <span :class="check">{{message}}</span>
     </p>
   </div>
 </template>
@@ -14,7 +14,17 @@ export default {
     message: {
       type: String,
     }
-  }
+  },
+  data() {
+      return {
+          check: "none",
+      }
+  },
+  methods: {
+      handleCheck() {
+          this.check === "check" ? this.check = "none" : this.check = "check";
+      }
+  },
 };
 </script>
 
