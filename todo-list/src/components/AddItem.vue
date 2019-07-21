@@ -1,13 +1,24 @@
 <template>
     <div id="addItem">
-        <input id="add_input">
-        <botton id="add_button">Add</botton>
+        <input id="add_input" type="text" v-model="newItem">
+        <button id="add_button" @click="handlerAddItem">Add</button>
     </div>
 </template>
 
 <script>
     export default {
-        name: "addItem"
+        name: "addItem",
+        data() {
+            return {
+                newItem: ""
+            }
+        },
+        methods: {
+            handlerAddItem() {
+                this.$emit("submitNewItem",this.newItem);
+                this.newItem = "";
+            }
+        },
     }
 </script>
 

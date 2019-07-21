@@ -1,7 +1,9 @@
 <template>
     <div id="list">
         <ol>
-            <ListItem></ListItem>
+            <li v-for="(item,index) in todoItem" v-bind:key="index">
+                <ListItem :message="item"></ListItem>
+            </li>
         </ol>
     </div>
 </template>
@@ -12,6 +14,11 @@ import ListItem from '@/components/ListItem.vue';
         name: "list",
         components: {
             ListItem
+        },
+        props: {
+            todoItem: {
+                type: Array,
+            },
         },
     }
 </script>

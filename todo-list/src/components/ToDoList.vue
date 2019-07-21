@@ -1,8 +1,8 @@
 <template>
     <div>
         <Header></Header>
-        <AddItem></AddItem>
-        <List></List>
+        <AddItem @submitNewItem="addListItem"></AddItem>
+        <List :todoItem = "showedItem" ></List>
         <Footer></Footer>
         
     </div>
@@ -21,6 +21,16 @@ import Footer from '@/components/Footer.vue';
             AddItem,
             List,
             Footer
+        },
+        data() {
+            return {
+                showedItem: []
+            }
+        },
+        methods: {
+            addListItem(newItem) {
+                this.showedItem.push(newItem)
+            }
         },
     }
 </script>
