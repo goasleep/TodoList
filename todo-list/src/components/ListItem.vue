@@ -1,6 +1,9 @@
 <template>
     <div id = "listItem">
-        <p>33333</p>
+        <p>
+            <input type="checkbox">
+            <span>123</span>
+        </p>
     </div>
 </template>
 

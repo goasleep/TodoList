@@ -1,0 +1,28 @@
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+  
+#header .span{
+    font-style: italic
+}
+
+#add_input {
+    width: 350px;
+    height: 20px;
+}
+
+#add_button {
+    color: white;
+    background-color: #fc999a;
+}
+
+#footer {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 60px;
+  }
