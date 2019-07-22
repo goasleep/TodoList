@@ -5,16 +5,16 @@
 </template>
 
 <script>
-import ToDoList from './components/ToDoList.vue';
+import ToDoList from "./components/ToDoList.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     ToDoList
   }
-}
+};
 </script>
 
 <style scoped>
-  @import './assets/css/todolist.css';
+@import "./assets/css/todolist.css";
 </style>

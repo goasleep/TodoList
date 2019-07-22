@@ -10,19 +10,19 @@ export default new Vuex.Store({
     },
     mutations: {
         addNewItem(state, item) {
-            state.allItem.push({ content: item.content, isChecked: false })
+            state.allItem.push({ content: item, isChecked: false })
         },
-        changeState(state,status){
+        changeState(state, status) {
             state.status = status;
         }
     },
     getters: {
         getShowList: (state) => {
-            if(state.status === 0){
+            if (state.status === 0) {
                 return state.allItem.filter(item => item.isChecked == false);
-            }else if(state.status === -1){
+            } else if (state.status === -1) {
                 return state.allItem.filter(item => item.isChecked == true);
-            }else{
+            } else {
                 return state.allItem;
             }
         }
