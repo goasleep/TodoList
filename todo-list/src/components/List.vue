@@ -1,28 +1,24 @@
 <template>
-    <div id="list">
-        <ol>
-            <li v-for="(item,index) in todoItem" v-bind:key="index">
-                <ListItem :message="item"></ListItem>
-            </li>
-        </ol>
-    </div>
+<div>
+    <ol>
+        <li v-for="(item, index) in items" :key="index" v-bind:class="{checked:item.isChecked}">
+            <input  name="done-todo" type="checkbox"  class="done-todo" v-model="item.isChecked">
+            <span>{{item.content}}</span>
+        </li>
+    </ol>
+</div>
 </template>
-
 <script>
-import ListItem from '@/components/ListItem.vue';
     export default {
-        name: "list",
-        components: {
-            ListItem
-        },
+        name: 'List',
         props: {
-            todoItem: {
-                type: Array,
-            },
+            items: Array
         },
+        methods: {
+
+        }
     }
+
+
 </script>
-
-<style lang="scss" scoped>
-
-</style>
+<style></style>

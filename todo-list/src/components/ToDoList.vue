@@ -1,40 +1,62 @@
 <template>
-    <div>
+    <div id="app" class="container">
         <Header></Header>
         <AddItem @submitNewItem="addListItem"></AddItem>
-        <List :todoItem = "showedItem" ></List>
-        <Footer></Footer>
-        
+
+        <todolist :items="itemsShow"></todolist>
+
+        <Footer  @getStatue="getStatue"></Footer>
     </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import AddItem from '@/components/AddItem.vue';
-import List from '@/components/List.vue';
-import Footer from '@/components/Footer.vue';
-
-    export default {
-        name: 'todolist',
-        components: {
-            Header,
-            AddItem,
-            List,
-            Footer
+import todolist from '@/components/List.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import AddItem from '@/components/AddItem.vue'
+export default {
+    name: 'app',
+    components: {
+        todolist,
+        Header,
+        Footer,
+        AddItem
+    },
+    data() {
+        return {
+            items: [],
+            item: "",
+            itemsCopy:[],
+            state: 1
+        }
+    },
+    methods: {
+        addItem(){
+            this.items.push({content:this.item,isChecked:false});
+            this.itemsCopy = this.items.slice();
+            this.item="";
         },
-        data() {
-            return {
-                showedItem: []
+        getStatue(state){
+            this.state = state
+        },
+        addListItem(newItem){
+            this.items.push({content:newItem,isChecked:false})
+            this.itemsCopy = this.items.slice();
+        }
+    },
+    computed: {
+        itemsShow: function () {
+            if(this.state === 0) {
+                return this.itemsCopy.filter(item=>item.isChecked==false);
+            } else if(this.state === -1){
+                return this.itemsCopy.filter(item=>item.isChecked==true);
+            } else{
+            return this.items;
             }
-        },
-        methods: {
-            addListItem(newItem) {
-                this.showedItem.push(newItem)
-            }
-        },
+        }
     }
+}
 </script>
 
-<style lang="scss" scoped>
-
+<style>
 </style>
