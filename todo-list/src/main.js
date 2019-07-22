@@ -1,23 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Vuex from 'vuex'
+import store from './store'
 Vue.config.productionTip = false
 
-Vue.use(Vuex)
-const store = new Vuex.Store({
-  state: {
-    allItem: []
-  },
-  mutations: {
-    addNewItem(state,item){
-      state.allItem
-    }
-  }
-
-}
-  
-)
-
 new Vue({
+  store,
   render: h => h(App),
 }).$mount('#app')
