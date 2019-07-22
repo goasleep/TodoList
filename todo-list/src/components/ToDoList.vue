@@ -25,31 +25,23 @@ export default {
     data() {
         return {
             items: [],
-            item: "",
-            itemsCopy:[],
             state: 1
         }
     },
     methods: {
-        addItem(){
-            this.items.push({content:this.item,isChecked:false});
-            this.itemsCopy = this.items.slice();
-            this.item="";
-        },
         getStatue(state){
             this.state = state
         },
         addListItem(newItem){
             this.items.push({content:newItem,isChecked:false})
-            this.itemsCopy = this.items.slice();
         }
     },
     computed: {
         itemsShow: function () {
             if(this.state === 0) {
-                return this.itemsCopy.filter(item=>item.isChecked==false);
+                return this.items.filter(item=>item.isChecked==false);
             } else if(this.state === -1){
-                return this.itemsCopy.filter(item=>item.isChecked==true);
+                return this.items.filter(item=>item.isChecked==true);
             } else{
             return this.items;
             }
