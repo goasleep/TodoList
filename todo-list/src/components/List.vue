@@ -11,6 +11,9 @@
 <script>
 export default {
   name: "List",
+  mounted() {
+      this.$store.dispatch("gotodo")
+  },
   computed: {
     itemsShow() {
       return this.$store.getters.getShowList;
