@@ -2,7 +2,7 @@
   <div>
     <ol>
       <li v-for="(item, index) in itemsShow" :key="index" v-bind:class="{checked:item.isChecked}">
-        <input name="done-todo" type="checkbox" class="done-todo" v-model="item.isChecked" />
+        <input  type="checkbox"  v-model="item.isChecked" />
         <span>{{item.content}}</span>
       </li>
     </ol>
