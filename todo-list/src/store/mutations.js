@@ -1,11 +1,14 @@
-  const mutations = { 
+const mutations = {
     addNewItem(state, item) {
-        state.allItem.push({ content: item.name, isChecked:item.isChecked});
-        debugger;
+        state.allItem.push({ name: item.name, isChecked: item.isChecked });
     },
     changeState(state, status) {
         state.status = status;
+    },
+    flush(state,items){
+        state.allItem = items;
     }
-  }
+    
+}
 
-  export default mutations;
+export default mutations;

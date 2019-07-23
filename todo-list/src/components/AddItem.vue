@@ -15,8 +15,9 @@ export default {
   },
   methods: {
     handlerAddItem() {
-      this.$store.commit("addNewItem", this.newItem,false);
-      this.$store.dispatch("add",this.newItem);
+      this.$store.commit("addNewItem", {name:this.newItem,isChecked:false});
+      debugger;
+      this.$store.dispatch("add",{name:this.newItem,isChecked:false});
       this.newItem = "";
     }
   }

@@ -1,6 +1,7 @@
 const getters =  {
      getShowList : (state) => {
         if (state.status === "active") {
+            debugger
             return state.allItem.filter(item => item.isChecked == false);
         } else if (state.status === "completed") {
             return state.allItem.filter(item => item.isChecked == true);

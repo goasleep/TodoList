@@ -1,18 +1,22 @@
 <template>
-  <div>
-    <ol>
+  <div> 
+      <ol>
       <li v-for="(item, index) in itemsShow" :key="index" v-bind:class="{checked:item.isChecked}">
-        <input  type="checkbox"  v-model="item.isChecked" />
-        <span>{{item.content}}</span>
+          <ListItem :item="item"></ListItem>
+        </p>
       </li>
-    </ol>
+      </ol>
   </div>
 </template>
 <script>
+import ListItem from '@/components/ListItem.vue';
 export default {
   name: "List",
   mounted() {
-      this.$store.dispatch("gotodo")
+    this.$store.dispatch("flushItems");
+  },
+    components: {
+    ListItem
   },
   computed: {
     itemsShow() {
