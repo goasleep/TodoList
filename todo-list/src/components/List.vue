@@ -3,7 +3,6 @@
       <ol>
       <li v-for="(item, index) in itemsShow" :key="index" v-bind:class="{checked:item.isChecked}">
           <ListItem :item="item"></ListItem>
-        </p>
       </li>
       </ol>
   </div>
