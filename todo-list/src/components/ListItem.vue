@@ -35,7 +35,7 @@ export default {
       this.editing = !this.editing;
     },
     deleteItem(item){
-        this.$store.dispatch("delete",item);
+        this.$store.dispatch("deleteItem",item);
     }
   }
 };

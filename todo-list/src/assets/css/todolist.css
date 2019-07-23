@@ -49,7 +49,7 @@ li:hover{
  
  }
 
-#all,#active,#complete{
+#all,#active,#complete,#delete{
     color: #fc999b;
     margin: 3px;
     padding: 3px 7px;
