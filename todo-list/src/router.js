@@ -3,10 +3,13 @@ import Router from 'vue-router'
 import Welcome from './views/Welcome'
 import Home from './views/Home'
 import TodoList from './views/TodoList'
+import Me from './views/me'
 
 Vue.use(Router)
 
 export default new Router({
+    mode: 'history',
+    base: process.env.BASE_URL,
     routes:[
         {
             path: '/',
@@ -22,6 +25,11 @@ export default new Router({
                     path: 'todolist',
                     name: 'todolist',
                     component: TodoList,
+                },
+                {
+                    path: 'me',
+                    name: 'me',
+                    component: Me,
                 }
             ]
         }

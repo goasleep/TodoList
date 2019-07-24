@@ -1,23 +1,30 @@
 <template>
   <div id="welcome">
-      <button @click="handleUse">开始使用</button>
+    <a-row type= "flex" justify="center" align="middle">
+        <a-col :span="6" :offset="3">
+            <a-input placeholder="please input your name " style="width:40%" v-model="name" />
+            <a-button type="primary" @click="handleUse">登录</a-button>
+        </a-col>
+    </a-row>
+    <!-- <input v-model="name" /> -->
   </div>
 </template>
 
 <script>
 export default {
-  name:'welcome',
+  name: "welcome",
   data() {
     return {
-      name: "",
-    }
+      name: ""
+    };
   },
   methods: {
-    handleUse(){
-        this.$router.push("/home")
+    handleUse() {
+      this.$store.commit("setName", this.name);
+      this.$router.push("/home/todolist");
     }
-  },
-}
+  }
+};
 </script>
 
 

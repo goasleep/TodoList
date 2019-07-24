@@ -1,4 +1,5 @@
 import axios from "axios"
+// import api from "./api.js"
 
 const baseUrl = "https://5d3681f786300e0014b64388.mockapi.io/allList";
 
